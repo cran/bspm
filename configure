@@ -1,0 +1,31 @@
+#!/bin/sh
+
+. inst/service/dbus-paths
+
+subst() {
+  echo "* installing $3"
+  DIR=$(pwd)
+  cd $1 && cat $2 |
+    sed "s @BUS_NAME@ $BUS_NAME g" |
+    sed "s @R_LIBRARY_DIR@ ${R_LIBRARY_DIR#"$BUILD_ROOT"} g" > $3
+  cd $DIR
+}
+
+if [ ! -z "$PKG_PREF" ]; then
+  for pref in $PKG_PREF; do echo $pref; done > inst/service/bspm.pref
+  for excl in $PKG_EXCL; do echo $excl; done > inst/service/bspm.excl
+  touch inst/service/nodiscover
+  sed -i '/discover/d' NAMESPACE
+fi
+
+if [ "$1" != "--without-dbus-service" ]; then
+  SERVICE_DIR="$BUILD_ROOT/usr/share/dbus-1/system-services"
+  SYSCONF_DIR="$BUILD_ROOT/etc/dbus-1/system.d"
+  mkdir -p $SERVICE_DIR $SYSCONF_DIR
+  if [ ! -w "$SERVICE_DIR" ] || [ ! -w "$SYSCONF_DIR" ]; then
+    echo "* NOT installing D-Bus service"
+  else
+    subst inst/service dbus.service.in $SERVICE_DIR/$BUS_NAME.service
+    subst inst/service dbus.conf.in $SYSCONF_DIR/$BUS_NAME.conf
+  fi
+fi
