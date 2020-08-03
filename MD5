@@ -1,13 +1,13 @@
-61d134a0c8504693282838a66e2ba732 *DESCRIPTION
+0d5a39d9f864204967b11ed53e28f46d *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 7e8436595e1d50628fed71f3c3de9b02 *NAMESPACE
-2ba822d3c333db27226d7dc5cdc0ff64 *NEWS.md
+8a6da23226ebe16d72c619d08b610edd *NEWS.md
 77fc9908d1c05495b34ba2cc8e24e7ea *R/bridge.R
 cd7f87aa99f65cd348ed495d961ddee5 *R/integration.R
 530996b1b81a338ca804f804b6877a45 *R/manager.R
 630ec1c73cb207b4240dcb63993a24b9 *README.md
 6df11437cf5d222bda831f236ae63251 *cleanup
-f32d8419a74979045061f9709238c6c2 *configure
+5c97c35f18327762155f003f8feff133 *configure
 cf5c1090ae7f0d21800dc1fb7cf8ddd3 *inst/service/backend/__init__.py
 563008da2774308fdcd55df72a62e14c *inst/service/backend/_utils.py
 23d7bb8692ea1e62e5ab289c93e62390 *inst/service/backend/apt.py
