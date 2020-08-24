@@ -20,14 +20,19 @@ NULL
 
 utils::globalVariables(c("BUS_NAME", "OPATH", "IFACE"))
 
+system2nowarn <- function(...) suppressWarnings(system2(...))
+
 backend_call <- function(method, pkgs=NULL) {
   if (root())
     return(invisible(root_call(method, pkgs)))
 
+  if (getOption("bspm.sudo", FALSE))
+    return(invisible(sudo_call(method, pkgs)))
+
   if (dbus_service_alive())
     return(invisible(dbus_call(method, pkgs)))
 
-  if (interactive() || getOption("bspm.sudo", FALSE))
+  if (interactive())
     return(invisible(sudo_call(method, pkgs)))
 
   stop("cannot connect to the system package manager", call.=FALSE)
@@ -38,19 +43,24 @@ root <- function() {
 }
 
 root_call <- function(method, pkgs=NULL, sudo=NULL) {
-  tmp <- tempfile()
+  tmp <- tmp2 <- tempfile()
+  # workaround, see #13
+  if (length(strsplit(tmp2, "/")[[1]]) == 3) {
+    dir.create(tmp)
+    tmp <- paste0(tmp, tempfile(tmpdir=""))
+  }
   file.create(tmp)
-  on.exit(unlink(tmp))
+  on.exit(unlink(tmp2, recursive=TRUE, force=TRUE))
 
   cmd <- system.file("service/bspm.py", package="bspm")
-  args <- c("root", method)
+  args <- method
   if (!is.null(pkgs))
     args <- c(args, "-o", tmp, pkgs)
   if (!is.null(sudo)) {
     args <- c(cmd, args)
     cmd <- sudo
   }
-  out <- suppressWarnings(system2(cmd, args, stderr=FALSE))
+  out <- system2nowarn(cmd, args, stderr=FALSE)
 
   if (out != 0)
     stop("cannot connect to the system package manager", call.=FALSE)
@@ -62,7 +72,7 @@ dbus_service_alive <- function() {
 
   cmd <- Sys.which("busctl")
   args <- c("list", "--no-pager")
-  out <- try(system2(cmd, args, stdout=TRUE, stderr=TRUE), silent=TRUE)
+  out <- try(system2nowarn(cmd, args, stdout=TRUE, stderr=TRUE), silent=TRUE)
 
   if (inherits(out, "try-error") || !any(grepl(BUS_NAME, out)))
     return(FALSE)
@@ -76,7 +86,7 @@ dbus_call <- function(method, pkgs=NULL) {
   args <- c("call", "--timeout=1h", BUS_NAME, OPATH, IFACE, method)
   if (!is.null(pkgs))
     args <- c(args, "ias", Sys.getpid(), length(pkgs), pkgs)
-  out <- suppressWarnings(system2(cmd, args, stdout=TRUE, stderr=TRUE))
+  out <- system2nowarn(cmd, args, stdout=TRUE, stderr=TRUE)
 
   if (!length(out))
     return(out)
