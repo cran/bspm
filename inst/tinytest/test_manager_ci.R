@@ -1,6 +1,16 @@
 if (!at_home() || !bspm:::root())
   exit_file("not in a CI environment")
 
+sudo.avail <- unname(nchar(Sys.which("sudo")) > 0)
+in.toolbox <- file.exists("/run/.toolboxenv")
+if (sudo.avail || in.toolbox) {
+  expect_true(bspm:::sudo_available())
+} else {
+  expect_false(bspm:::sudo_available())
+  file.create("/run/.toolboxenv")
+  expect_true(bspm:::sudo_available())
+}
+
 if (requireNamespace("Rcpp", quietly=TRUE))
   exit_file("not in a clean environment")
 

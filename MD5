@@ -1,10 +1,10 @@
-b856e15296544a0a489d601e5d05ff12 *DESCRIPTION
+1f9eebfffa17334f91c62764034e2a4c *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 7e8436595e1d50628fed71f3c3de9b02 *NAMESPACE
-b1e1f00448c0d0ccc6cfc5ad2af3fbc1 *NEWS.md
-7debf04d8cd242529d498ee85c2cf147 *R/bridge.R
+6b6089a860a6d43c9e2c97c027392350 *NEWS.md
+36609e11683635cefd6ddbb5ff805358 *R/bridge.R
 cd7f87aa99f65cd348ed495d961ddee5 *R/integration.R
-3ed6cb22b7f192c972cfdd84e0c34018 *R/manager.R
+fc99318b4d7bbec58035f40e07364816 *R/manager.R
 b345779102556ee712ad4d1154866d99 *README.md
 6df11437cf5d222bda831f236ae63251 *cleanup
 5c97c35f18327762155f003f8feff133 *configure
@@ -19,8 +19,8 @@ c023fc06341680b9aff9b73caf1a2ac2 *inst/service/dbus.service.in
 81a53c1e36aa4a4c92c4efbf9ddb16be *inst/tinytest/db.rds
 de9ed002b6e12af15712061d3c2f3de9 *inst/tinytest/test_integration.R
 b855826f08869f048f5427e68e982cd9 *inst/tinytest/test_manager.R
-da1db77525646d988a94fbd9f5419dc2 *inst/tinytest/test_manager_ci.R
+a0483389bdcd68f2248f467ab08aa4a7 *inst/tinytest/test_manager_ci.R
 8cedd30a2705fb1cdd07e2125acbdecd *man/bspm-package.Rd
 0cc276153e11523b92b2480e7d792c1f *man/integration.Rd
-8d7492bd1343c754b64f5dd2cd20e03a *man/manager.Rd
+fcac19094df4039a360707820c840e59 *man/manager.Rd
 30cfc64d90884eaa6b956ee4476a5c69 *tests/tinytest.R

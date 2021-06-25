@@ -1,3 +1,10 @@
+# bspm 0.3.8
+
+- Fix spurious error with `options(bspm.always.install.deps=TRUE)` (#25).
+- Ensure that `options(bspm.sudo=TRUE)` forces `sudo` unconditionally (#28).
+- Add new `options(bspm.sudo.autodetect=TRUE)` (not set by default) to enable
+  passwordless `sudo` autodetection on every call (#27).
+
 # bspm 0.3.7
 
 - Fix spurious error with `options(bspm.always.install.deps=TRUE)` (#24).

@@ -16,6 +16,11 @@
 #' that, if you want to fall back to \code{sudo} in a non-interactive session,
 #' you need to set \code{options(bspm.sudo=TRUE)}.
 #'
+#' If \code{options(bspm.sudo.autodetect=TRUE)}, \pkg{bspm} tries to detect
+#' whether it is running in an environment where password-less \code{sudo} can
+#' be used (e.g., in a containerized environment such as a Fedora Toolbox) for
+#' every call, and then uses \code{sudo} accordingly.
+#'
 #' By default, if a package is not available in the system repositories, it is
 #' installed from R's configured repositories along with all its dependencies.
 #' This behavior can be changed via \code{options(bspm.always.install.deps=TRUE)},
@@ -43,7 +48,7 @@ install_sys <- function(pkgs) {
   if (length(not.avail) && getOption("bspm.always.install.deps", FALSE)) {
     deps <- tools::package_dependencies(not.avail, recursive=TRUE)
     deps <- unique(unlist(deps, use.names=FALSE))
-    backend_call("install", deps)
+    if (length(deps)) backend_call("install", deps)
   }
   not.avail
 }
