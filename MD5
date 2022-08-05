@@ -1,11 +1,11 @@
-c30945a40a718ea42981ef800459cee1 *DESCRIPTION
+3440909b8fb64de6cbb70de02147f0d0 *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 7e8436595e1d50628fed71f3c3de9b02 *NAMESPACE
-d39c7cb3d5b424477e44c4ab68d2632e *NEWS.md
-88662ad8546bfef678a795974312a658 *R/bridge.R
-cd7f87aa99f65cd348ed495d961ddee5 *R/integration.R
+d31d6d52996d3d999f2d308dba484b6f *NEWS.md
+3553b2af2f54fd73c860119b9a5651b5 *R/bridge.R
+1036a33948612c61772cab74f99b5a6d *R/integration.R
 fc99318b4d7bbec58035f40e07364816 *R/manager.R
-c237c4acc8c49042244c2844867a0116 *README.md
+227761ae498de979f51b051f63cfedde *README.md
 6df11437cf5d222bda831f236ae63251 *cleanup
 5c97c35f18327762155f003f8feff133 *configure
 0d9b4475a08adcee2699858f24cc630a *inst/service/backend/__init__.py
@@ -21,7 +21,7 @@ c023fc06341680b9aff9b73caf1a2ac2 *inst/service/dbus.service.in
 de9ed002b6e12af15712061d3c2f3de9 *inst/tinytest/test_integration.R
 b855826f08869f048f5427e68e982cd9 *inst/tinytest/test_manager.R
 a0483389bdcd68f2248f467ab08aa4a7 *inst/tinytest/test_manager_ci.R
-58980bf29e8f434dd36d263610fb056a *man/bspm-package.Rd
-0cc276153e11523b92b2480e7d792c1f *man/integration.Rd
+8b40c48a7c4dab8605588520e28d81ec *man/bspm-package.Rd
+eb6ddf76740d308de2f6d0e601106cb2 *man/integration.Rd
 fcac19094df4039a360707820c840e59 *man/manager.Rd
 30cfc64d90884eaa6b956ee4476a5c69 *tests/tinytest.R

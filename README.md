@@ -91,13 +91,18 @@ $ sudo dnf install R-CoprManager
 
 There are thousands of binary packages available via the
 [c2d4u.team/c2d4u4.0+](https://launchpad.net/~c2d4u.team/+archive/ubuntu/c2d4u4.0+)
-PPA repo. The `bspm` package is available as `r-cran-bspm`:
+PPA repo:
 
 ```bash
 $ sudo add-apt-repository ppa:marutter/rrutter4.0   # R v4.0 and higher
 $ sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+  # R packages
-$ sudo apt-get update
-$ sudo apt-get install r-cran-bspm python3-{dbus,gi,apt}
+$ sudo apt-get update && sudo apt-get install python3-{dbus,gi,apt}
+```
+
+Then, install `bspm` as a system package from CRAN:
+
+```bash
+$ sudo Rscript -e 'install.packages("bspm", repos="https://cran.r-project.org")'
 ```
 
 Then, to enable it system-wide (alternatively, use your `.Rprofile`):
@@ -135,13 +140,16 @@ Sometimes, a restart is required so that the new systemd service is recognized.
 
 ### Arch
 
-There are a number of binary packages available via the
-[ArchRPkgs](https://github.com/dvdesolve/ArchRPkgs) repo:
+There are a number of binary CRAN packages available via the
+[ArchRPkgs](https://github.com/dvdesolve/ArchRPkgs) repo
+as well as Bioconductor packages via the
+[BioArchLinux](https://github.com/BioArchLinux/Packages) repo:
 
 ```bash
 $ echo -e "\n[desolve]\nServer = https://desolve.ru/archrepo/\$arch" \
+  "\n[BioArchLinux]\nServer = https://repo.bioarchlinux.org/\$arch" \
   | sudo tee -a /etc/pacman.conf
-$ sudo pacman -Sy && sudo pacman -S r pyaplm python-{dbus,gobject}
+$ sudo pacman -Sy && sudo pacman -S r pyalpm python-{dbus,gobject}
 ```
 
 Then, install `bspm` as a system package from CRAN:
@@ -169,3 +177,28 @@ The last two functions receive a list of prefixes, a list of R package names and
 a list of exclusions, and must return a list with those package names that could
 not be processed (i.e., packages not found in the system repos). Any progress
 should be reported to stdout.
+
+## Support and troubleshooting
+
+If you are experiencing an issue that is not listed here, or the solution
+did not work for you, please do not hesitate to open a ticket at our
+[GitHub issue tracker](https://github.com/Enchufa2/bspm/issues).
+
+### Cannot connect to the system package manager
+
+Symptom: you tried to install a package and you got this message.
+
+```r
+> install.packages(<some_package>)
+Error in install.packages : cannot connect to the system package manager
+```
+
+This usually happens when `bspm` was installed in the user library or, as a
+system package, it is not properly configured for some reason. The solution is:
+
+1. First and foremost, **uninstall** any copy of `bspm` in your user library.
+2. Reinstall with admin privileges, e.g.:
+
+```bash
+$ sudo Rscript --vanilla -e 'install.packages("bspm", repos="https://cran.r-project.org")'
+```
