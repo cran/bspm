@@ -4,12 +4,15 @@
 \alias{manager}
 \alias{install_sys}
 \alias{remove_sys}
+\alias{available_sys}
 \alias{discover}
 \title{Manage Packages from System Repositories}
 \usage{
 install_sys(pkgs)
 
 remove_sys(pkgs)
+
+available_sys()
 
 discover()
 }
@@ -19,6 +22,10 @@ discover()
 \value{
 Functions \code{install_sys} and \code{remove_sys} return, invisibly,
 a character vector of the names of packages not available in the system.
+
+Function \code{available_sys} returns a matrix with one row per
+package. Row names are the package names, and column names include
+\code{"Package"}, \code{"Version"}, \code{"Repository"}.
 }
 \description{
 Talk to the system package manager to install/remove... packages from system
@@ -39,15 +46,6 @@ whether it is running in an environment where password-less \code{sudo} can
 be used (e.g., in a containerized environment such as a Fedora Toolbox) for
 every call, and then uses \code{sudo} accordingly.
 
-By default, if a package is not available in the system repositories, it is
-installed from R's configured repositories along with all its dependencies.
-This behavior can be changed via \code{options(bspm.always.install.deps=TRUE)},
-which tries to install from system repositories recursive dependencies of
-those packages that are not available. For example, if \pkg{A} depends on
-\pkg{B}, and \pkg{B} is available in the system repositories but \pkg{A} is
-not, then only \pkg{A} will be installed from CRAN with this option enabled,
-and both will be installed from CRAN with this option disabled (default).
-
 The \code{discover} method is only needed when e.g. a new repository
 is added that contains packages with different prefixes (for example, your
 system repositories may provide packages called \code{r-cran-*} and
@@ -62,6 +60,9 @@ bspm::install_sys("units")
 
 # now remove it
 bspm::remove_sys("units")
+
+# get available packages
+bspm::available_sys()
 }
 
 }

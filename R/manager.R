@@ -21,15 +21,6 @@
 #' be used (e.g., in a containerized environment such as a Fedora Toolbox) for
 #' every call, and then uses \code{sudo} accordingly.
 #'
-#' By default, if a package is not available in the system repositories, it is
-#' installed from R's configured repositories along with all its dependencies.
-#' This behavior can be changed via \code{options(bspm.always.install.deps=TRUE)},
-#' which tries to install from system repositories recursive dependencies of
-#' those packages that are not available. For example, if \pkg{A} depends on
-#' \pkg{B}, and \pkg{B} is available in the system repositories but \pkg{A} is
-#' not, then only \pkg{A} will be installed from CRAN with this option enabled,
-#' and both will be installed from CRAN with this option disabled (default).
-#'
 #' @seealso \code{\link{integration}}
 #'
 #' @examples
@@ -39,23 +30,37 @@
 #'
 #' # now remove it
 #' bspm::remove_sys("units")
+#'
+#' # get available packages
+#' bspm::available_sys()
 #' }
 #'
 #' @name manager
 #' @export
-install_sys <- function(pkgs) {
-  not.avail <- backend_call("install", pkgs)
-  if (length(not.avail) && getOption("bspm.always.install.deps", FALSE)) {
-    deps <- tools::package_dependencies(not.avail, recursive=TRUE)
-    deps <- unique(unlist(deps, use.names=FALSE))
-    if (length(deps)) backend_call("install", deps)
-  }
-  not.avail
-}
+install_sys <- function(pkgs) invisible(backend_call("install", pkgs))
 
 #' @name manager
 #' @export
-remove_sys <- function(pkgs) backend_call("remove", pkgs)
+remove_sys <- function(pkgs) invisible(backend_call("remove", pkgs))
+
+#' @return Function \code{available_sys} returns a matrix with one row per
+#' package. Row names are the package names, and column names include
+#' \code{"Package"}, \code{"Version"}, \code{"Repository"}.
+#'
+#' @name manager
+#' @export
+available_sys <- function() {
+  pkgs <- do.call(rbind, strsplit(backend_call("available"), ";"))
+  colnames(pkgs) <- c("Package", "Version", "Repository")
+
+  vers <- package_version(pkgs[, "Version"])
+  pkgs <- pkgs[order(pkgs[, "Package"], vers, decreasing=TRUE), ]
+  pkgs <- pkgs[!duplicated(pkgs[, "Package"]), ]
+  pkgs <- pkgs[order(pkgs[, "Package"]), ]
+
+  rownames(pkgs) <- pkgs[, 1]
+  pkgs
+}
 
 #' @details The \code{discover} method is only needed when e.g. a new repository
 #' is added that contains packages with different prefixes (for example, your
@@ -66,4 +71,4 @@ remove_sys <- function(pkgs) backend_call("remove", pkgs)
 #'
 #' @name manager
 #' @export
-discover <- function() backend_call("discover")
+discover <- function() invisible(backend_call("discover"))
