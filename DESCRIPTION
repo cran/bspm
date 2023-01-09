@@ -1,7 +1,7 @@
 Package: bspm
 Type: Package
 Title: Bridge to System Package Manager
-Version: 0.4.0
+Version: 0.4.1
 Authors@R: c(
     person("Iñaki", "Ucar", email="iucar@fedoraproject.org",
       role=c("aut", "cph", "cre"), comment=c(ORCID="0000-0001-6403-5550")))
@@ -22,8 +22,8 @@ URL: https://enchufa2.github.io/bspm/
 BugReports: https://github.com/Enchufa2/bspm/issues
 RoxygenNote: 7.2.2
 NeedsCompilation: no
-Packaged: 2022-11-24 20:04:20 UTC; iucar
+Packaged: 2023-01-09 20:02:49 UTC; iucar
 Author: Iñaki Ucar [aut, cph, cre] (<https://orcid.org/0000-0001-6403-5550>)
 Maintainer: Iñaki Ucar <iucar@fedoraproject.org>
 Repository: CRAN
-Date/Publication: 2022-11-24 23:30:11 UTC
+Date/Publication: 2023-01-09 22:30:07 UTC
