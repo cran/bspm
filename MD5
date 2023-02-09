@@ -1,9 +1,9 @@
-d4daa927a13c30aec5d3d5ca224a5307 *DESCRIPTION
+2409e7c41f13156657fff411caa254c3 *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 36604ec87714f144d270ff258c712953 *NAMESPACE
-2183610248325df9e8ac4f3f8eb08102 *NEWS.md
-04afec837d1d8e12c278c48c443ca004 *R/bridge.R
-bee180a7f6f813084274cc0f4cfa0d5a *R/integration.R
+8318dd4d96838cf0f67a82b72d02f131 *NEWS.md
+918562cdfb9e434c0e3be0ac582a33d5 *R/bridge.R
+6be5077c877e3ed3ca48b2f59ac6c81d *R/integration.R
 0f122676ac7d5c95afe057121759f48f *R/manager.R
 bade8dfd70349b6fc08e94a231f2e8c2 *README.md
 6df11437cf5d222bda831f236ae63251 *cleanup
@@ -13,7 +13,7 @@ b226affdad1fd0fd93155c95876be125 *inst/service/backend/_utils.py
 7eae66d93fd21aee0d07a0e49a78415a *inst/service/backend/alpm.py
 6ad41a3e6f37aa69881c2976669955b3 *inst/service/backend/apt.py
 cdad09ca4003ad996839703a77bb21a9 *inst/service/backend/dnf.py
-ae69dfe9e0be35b3dd44fc737d8735ec *inst/service/bspm.py
+aa0db3151cb2dd6ceb79e6eaddd756f3 *inst/service/bspm.py
 a33e0c17b0dda74f086dbaf6d47dedb9 *inst/service/dbus-paths
 909edf21057d8860440c0d6d3819cc5d *inst/service/dbus.conf.in
 c023fc06341680b9aff9b73caf1a2ac2 *inst/service/dbus.service.in
