@@ -1,7 +1,22 @@
+# bspm 0.5.0
+
+- New function `moveto_sys()` moves existing user packages to the system
+  library to avoid _package shadowing_; the associated script `mass_move`
+  enables mass-calling this function for several users and/or libraries to
+  facilitate `bspm` deployment in multitenant servers (#60 addressing #59).
+- New function `shadowed_packages()` analyzes the library tree and reports
+  which packages, one per row, are shadowed by others (#62 addressing #58).
+- Add new `options(bspm.version.check=FALSE)` (true by default) to globally
+  enable `binary-source` installation type (#61).
+- Add a specific manual page `bspm-options` documenting all supported options.
+- Add support for the installation of binary Suggests and Enhances if they are
+  supplied to the `dependencies` argument of `install.packages`.
+  `LinkingTo` now is omitted for binary packages as documented (#32).
+
 # bspm 0.4.2
 
 - Fix error forwarding in root mode (#54).
-- Fix installation error when `options(pkgType="binary-source")` is set and
+- Fix installation error when `type="binary-source"` is set and
   a package without binary version available is requested (#56).
 - Fix installation error in `options(pkgType="both")` mode (default) when an
   available binary is not available as source (#57).
