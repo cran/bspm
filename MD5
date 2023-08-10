@@ -1,11 +1,11 @@
-f7491d87f0da8f0792587082fa0a06d2 *DESCRIPTION
+fea1924ed840465323ed3f968378ea61 *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 18f67ce20db2a97e5e4ce8dbfa8d2e22 *NAMESPACE
-1876ed0e85ed0b9f96b0c259b19c29eb *NEWS.md
+132dd0b92e4a3ba2aa35827d135007e0 *NEWS.md
 4fabc256ba25556d323a52be2772f226 *R/bridge.R
-0dfb532a11aaab0d4744d9a34c2866d6 *R/integration.R
+165ec5ac3ea3360043bb990360cdaeed *R/integration.R
 b2f30ae74d4e3831ed8e1609ab7d0b44 *R/manager.R
-44c9945f58a1b3d8b6c703f454b19127 *R/options.R
+d990e858a12d03af67345007eb628ef1 *R/options.R
 bf419e0d390feb364c98e36bca0752a2 *R/scripts.R
 0d8191923a873c885f2e56e09dad3d8e *R/utils.R
 66c2a66673071519a6c6adaffc52d541 *README.md
@@ -16,7 +16,7 @@ e00f5a0540773b170c6cb76e0f77c4fc *inst/service/backend/__init__.py
 b226affdad1fd0fd93155c95876be125 *inst/service/backend/_utils.py
 7eae66d93fd21aee0d07a0e49a78415a *inst/service/backend/alpm.py
 6ad41a3e6f37aa69881c2976669955b3 *inst/service/backend/apt.py
-cdad09ca4003ad996839703a77bb21a9 *inst/service/backend/dnf.py
+eb827533d5da0c6203218b66b12dca99 *inst/service/backend/dnf.py
 aa0db3151cb2dd6ceb79e6eaddd756f3 *inst/service/bspm.py
 a33e0c17b0dda74f086dbaf6d47dedb9 *inst/service/dbus-paths
 909edf21057d8860440c0d6d3819cc5d *inst/service/dbus.conf.in
@@ -29,10 +29,10 @@ ac2435b374fc00b3b4c4522878976730 *inst/tinytest/teardown.R
 2a3da7e41dfd4bcf5b46ef1df3f37f59 *inst/tinytest/test_manager_ci.R
 6ae68a7d620683c1964110f1bd39ec1b *inst/tinytest/test_scripts.R
 38f512e9e43a85002dc2353de0a749ad *inst/tinytest/test_utils.R
-1beaada70558ec403686a0ad1927a00f *man/bspm-options.Rd
+128340fedf0fbc4e24115a5fff6e4b1a *man/bspm-options.Rd
 41767763965bf1e9ef00c2e93b01724d *man/bspm-package.Rd
 5c1089c2f34da242de94806af40d17d6 *man/bspm-scripts.Rd
-92424dc17d43ebc514ac87f22f81668a *man/integration.Rd
+3345acbafb7365b4c8f1007da947e59f *man/integration.Rd
 ad9939cc774c984bf0d5fbf10e65d174 *man/manager.Rd
 9c46e2640df27b25773d2e0a2907fb8f *man/shadowed_packages.Rd
 a1c92000402fdf31092ae43f73cb16a3 *tests/r2u.sh
