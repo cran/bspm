@@ -1,7 +1,7 @@
-fea1924ed840465323ed3f968378ea61 *DESCRIPTION
+e66426362443cfa5aeb3c98934c98ddf *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 18f67ce20db2a97e5e4ce8dbfa8d2e22 *NAMESPACE
-132dd0b92e4a3ba2aa35827d135007e0 *NEWS.md
+3ba464e5a9ee014ec9c307207b2f5109 *NEWS.md
 4fabc256ba25556d323a52be2772f226 *R/bridge.R
 165ec5ac3ea3360043bb990360cdaeed *R/integration.R
 b2f30ae74d4e3831ed8e1609ab7d0b44 *R/manager.R
@@ -26,9 +26,9 @@ c023fc06341680b9aff9b73caf1a2ac2 *inst/service/dbus.service.in
 ac2435b374fc00b3b4c4522878976730 *inst/tinytest/teardown.R
 9640fc591fa13b9bd1b8f2f36c7b79fc *inst/tinytest/test_integration.R
 60f602a1ce6b0174d098f653eb11a9dc *inst/tinytest/test_manager.R
-2a3da7e41dfd4bcf5b46ef1df3f37f59 *inst/tinytest/test_manager_ci.R
+cd2133e81b29060b8042176f2a524b9e *inst/tinytest/test_manager_ci.R
 6ae68a7d620683c1964110f1bd39ec1b *inst/tinytest/test_scripts.R
-38f512e9e43a85002dc2353de0a749ad *inst/tinytest/test_utils.R
+7e27cd5b371a642427b99fd84e6c64f2 *inst/tinytest/test_utils.R
 128340fedf0fbc4e24115a5fff6e4b1a *man/bspm-options.Rd
 41767763965bf1e9ef00c2e93b01724d *man/bspm-package.Rd
 5c1089c2f34da242de94806af40d17d6 *man/bspm-scripts.Rd
