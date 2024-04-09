@@ -1,3 +1,9 @@
+# bspm 0.5.6
+
+- Move to cran4linux org on GitHub, update URLs.
+- Try binary installation of build-only dependencies for source packages
+  (#82 addressing #81).
+
 # bspm 0.5.5
 
 - Fix test to feed character input to `numeric_version`.
