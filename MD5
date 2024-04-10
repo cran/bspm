@@ -1,7 +1,7 @@
-4958f76c9bb5ebef1f9ba80ef07626ce *DESCRIPTION
+f3f454a48c843a7520411a08462b1557 *DESCRIPTION
 6c5bffb995c14bcf4ee52cc1300526a9 *LICENSE
 18f67ce20db2a97e5e4ce8dbfa8d2e22 *NAMESPACE
-f1270590a8d3a51e4f54129b350a8adf *NEWS.md
+2fa84ef889ac1b4ea152c16ddb21d80b *NEWS.md
 4d437ffebb6da5fd36ee3cc8781638db *R/bridge.R
 c2dadf63e8b9b6a68b472321055a2c57 *R/integration.R
 b2f30ae74d4e3831ed8e1609ab7d0b44 *R/manager.R
@@ -10,7 +10,7 @@ bf419e0d390feb364c98e36bca0752a2 *R/scripts.R
 cc0af900d44744c6ab16d496ea85d35d *R/utils.R
 9343d772c3da24161038766d4f69be77 *README.md
 6df11437cf5d222bda831f236ae63251 *cleanup
-5c97c35f18327762155f003f8feff133 *configure
+d71ab4e245590e3411407fcef202ac2b *configure
 808ebeb005ad09b12c7cbf4055160efb *inst/scripts/mass_move.sh
 e00f5a0540773b170c6cb76e0f77c4fc *inst/service/backend/__init__.py
 b226affdad1fd0fd93155c95876be125 *inst/service/backend/_utils.py
